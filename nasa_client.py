@@ -14,3 +14,14 @@ class NasaClient:
         response = requests.get(self.base_url, params=params)
         response.raise_for_status()
         return response.json()
+
+    def get_apod_range(self, start_date: str, end_date: str):
+        """Fetches APOD data for a range of dates."""
+        params = {
+            "api_key": self.api_key,
+            "start_date": start_date,
+            "end_date": end_date,
+        }
+        response = requests.get(self.base_url, params=params)
+        response.raise_for_status()
+        return response.json()

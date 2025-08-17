@@ -24,3 +24,15 @@ def get_all_apods():
     """Fetch all APOD records from the Supabase database."""
     response = supabase.table("apod").select("*").order("date", desc=True).execute()
     return response.data
+
+
+def get_filtered_apods(filter):
+    """Fetch APOD records filtered by a keyword in the explanation."""
+    response = (
+        supabase.table("apod")
+        .select("*")
+        .ilike("title", f"%{filter}%")
+        .order("date", desc=True)
+        .execute()
+    )
+    return response.data
