@@ -1,5 +1,12 @@
 # Gitignore for python
 
+# env files
+.env
+.env.*
+# virtualenv
+venv/
+ENV/
+env/
 # Byte-compiled files
 __pycache__/
 *.py[cod]
