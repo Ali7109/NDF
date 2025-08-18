@@ -27,12 +27,10 @@ def get_all_apods():
 
 
 def get_filtered_apods(filter):
-    """Fetch APOD records filtered by a keyword in the explanation."""
-    response = (
-        supabase.table("apod")
-        .select("*")
-        .ilike("title", f"%{filter}%")
-        .order("date", desc=True)
-        .execute()
-    )
+    """Fetch APOD records where the title contains every word in filter_list."""
+    filter_list = list(filter)
+    query = supabase.table("apod").select("*")
+    for word in filter_list:
+        query = query.ilike("title", f"%{word}%")
+    response = query.order("date", desc=True).execute()
     return response.data
