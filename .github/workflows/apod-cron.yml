@@ -32,4 +32,4 @@ jobs:
 
             - name: Run APOD fetch
               run: |
-                  python main.py list --filter thor star dark
+                  python3 main.py fetch
