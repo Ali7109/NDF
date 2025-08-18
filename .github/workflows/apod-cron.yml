@@ -1,4 +1,8 @@
 name: Run APOD Filter
+env:
+    NASA_KEY: ${{ secrets.NASA_KEY }}
+    SUPA_URL: ${{ secrets.SUPA_URL }}
+    SUPA_KEY: ${{ secrets.SUPA_KEY }}
 
 on:
     schedule:
