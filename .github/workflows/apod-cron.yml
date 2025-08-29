@@ -5,7 +5,7 @@ env:
     SUPA_KEY: ${{ secrets.SUPA_KEY }}
 
 on:
-    schedule:
+    #schedule:
         # ┌───────────── minute (0 - 59)
         # │ ┌───────────── hour (0 - 23)
         # │ │ ┌───────────── day of month (1 - 31)
@@ -13,7 +13,7 @@ on:
         # │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday=0)
         # │ │ │ │ │
         # │ │ │ │ │
-        - cron: "0 15 * * *" # every day at 03:00 PM UTC
+        #- cron: "0 15 * * *" # every day at 03:00 PM UTC
     workflow_dispatch: # lets you trigger manually from the Actions tab
 
 jobs:
